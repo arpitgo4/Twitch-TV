@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './Header.component';
 import Footer from './Footer.component';
+import ChannelList from './ChannelList.component';
 
 export default class App extends React.Component {
 
@@ -14,6 +15,11 @@ export default class App extends React.Component {
 							<Header />
 						</div>
 					</div>	
+					<div className="row">
+						<div className="col-xs-6 col-xs-offset-3">
+							<ChannelList />
+						</div>
+					</div>
 					<div className="row">
 						<div className="col-xs-6 col-xs-offset-3">
 							<Footer />
