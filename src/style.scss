@@ -16,4 +16,24 @@ $tv-channel-status-text-color: #8AA6C2;
 
 html, body, #react-app {
 	height: 100%;
+	background-color: $body-background-color;
+}
+
+.heading {
+	background-color: $app-background-color;
+	color: $header-text-color;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 3em;
+	margin-top: 1%;
+}
+
+.heading-text {
+	margin-left: 5%;
+	margin-top: 2%;
+}
+
+.footer {
+	height: 9px;
+	background-color: $app-background-color;
 }
