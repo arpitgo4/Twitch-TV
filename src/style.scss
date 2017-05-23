@@ -1,3 +1,19 @@
+$body-background-color: #ECF0E7;
+$app-background-color: #5C5457;
+$row-background-color: #4A5E82;
+$tv-icon-border-color: #E1E1E6;
+
+$slider-text-color: $app-background-color;
+
+$all-slider-icon-color: $app-background-color;
+$online-slider-icon-color: #B6CAA4;
+$offline-slider-icon-color: #869DB7;
+
+$header-text-color: $tv-icon-border-color;
+$tv-channel-seperator-color: $tv-icon-border-color;
+$tv-channel-text-color: #AECCA6;
+$tv-channel-status-text-color: #8AA6C2;
+
 html, body, #react-app {
 	height: 100%;
 }
