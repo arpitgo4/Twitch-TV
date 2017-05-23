@@ -6,7 +6,9 @@ export default class ChannelList extends React.Component {
 
 	render() {
 		return (
-			null
+			{
+				this.props.channelList.map(channel => <ChannelRow key={channel.id} ...channel />)	
+			}
 		);
 	}
 

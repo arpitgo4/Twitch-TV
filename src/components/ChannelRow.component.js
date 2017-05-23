@@ -7,13 +7,13 @@ export default class ChannelRow extends React.Component {
 			<div className="channel-row">
 				<div className="row">
 					<div className="col-xs-1 col-xs-offset-1">
-						<img className="img-circular channel-img">{this.props.channelImg}</img>
+						<img className="img-circular channel-img">{this.props.logo}</img>
 					</div>
 					<div className="col-xs-2 col-xs-offset-0">
-						<p className="channel-name">{this.props.channelName}</p>
+						<p className="channel-name">{this.props.name}</p>
 					</div>
 					<div className="col-xs-4 col-xs-2">
-						<p className="channel-status">{this.props.channelStatus}</p>
+						<p className="channel-status">{this.props.status}</p>
 					</div>
 				</div>
 			</div>
