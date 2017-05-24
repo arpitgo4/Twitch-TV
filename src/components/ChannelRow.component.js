@@ -11,7 +11,7 @@ export default class ChannelRow extends React.Component {
 							className="img-responsive img-circle channel-img" />
 					</div>
 					<div className="col-xs-3 col-xs-offset-0">
-						<p className="channel-name">{this.props.name}</p>
+						<p className="channel-name" onClick={((url) => () => this._openUrl(url))(this.props.url)}>{this.props.name}</p>
 					</div>
 					<div className="col-xs-7 col-xs-offset-0">
 						<p className="channel-status">{this.props.status}</p>
@@ -19,6 +19,10 @@ export default class ChannelRow extends React.Component {
 				</div>
 			</div>
 		);
+	}
+
+	_openUrl(url) {
+		window.open(url, '_blank');
 	}
 
 }

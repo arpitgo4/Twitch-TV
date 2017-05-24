@@ -24,6 +24,7 @@ export default class App extends React.Component {
 	}
 
 	render() {
+		console.log('channels state', this.state.channels);
 		return (
 			<div className="container-fluid">
 				<div className="center-block">
@@ -57,30 +58,25 @@ export default class App extends React.Component {
 			.get(`${this.TWITCH_API_STREAM}/${channel}`)
 			.use(jsonp)
 			.end((err, res) => {
-				if(err) {
-					//console.log('error in streams', err);
-					return;
-				}
+				if(err) return;
+
 				const status = res.body.stream;
-				//console.log(channel, status);
 
 				superagent
 				.get(`${this.TWITCH_API_CHANNEL}/${channel}`)
 				.use(jsonp)
 				.end((err, res) => {
-					if(err) {
-					//	console.log('error in channels', err);
-						return;
-					}
-					//console.log(res.body);
+					if(err) return;
+
 					const c = {
 						id: res.body._id,
 						logo: res.body.logo,
 						name: res.body.name,
+						url: res.body.url,
 						status: (status === null || status === undefined) ? 'Offline' : 'Online'
 					};
-					console.log(c);
-					//this.setState({ ...this.state, channels: this.state.channels.push(c) });
+					//console.log(c);
+					this.setState({ ...this.state, channels: [ ...this.state.channels, c ] });
 				})
 			});	
 		});
@@ -88,8 +84,8 @@ export default class App extends React.Component {
 
 }
 
-const channels = [
+/*const channels = [
 	{ id: 1, logo: 'https://avatars2.githubusercontent.com/u/9892522?v=3&s=400', name: 'FreeCodeCamp', status: 'Offline'},
 	{ id: 2, logo: 'https://avatars2.githubusercontent.com/u/9892522?v=3&s=400', name: 'Test_channel', status: 'Offline'},
 	{ id: 3, logo: 'https://avatars2.githubusercontent.com/u/9892522?v=3&s=400', name: 'ESL_SC2', status: 'Offline'},
-];
+];*/
