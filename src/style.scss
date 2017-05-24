@@ -33,17 +33,29 @@ html, body, #react-app {
 	margin-top: 2%;
 }
 
-
 .channel-row {
 
+	$top-bottom-margin: 2px;
 
+	background-color: $row-background-color;
+	color: $tv-channel-text-color;
+	
+	&:first-child {
+		margin-top: -8px;
+	}
+
+	margin-top: $top-bottom-margin;
+	margin-bottom: $top-bottom-margin;
 
 	.channel-img {
-	
+		border: 2px solid $tv-icon-border-color;
 	}
 
 	.channel-name {
-
+		&:hover {
+			text-decoration: underline;
+			cursor: pointer;
+		}
 	}
 
 	.channel-status {
