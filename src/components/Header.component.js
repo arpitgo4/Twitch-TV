@@ -13,7 +13,10 @@ export default class Header extends React.Component {
 					</div>
 					<div className="col-xs-4 col-xs-offset-0">
 						<div className="heading-menu pull-right">
-							<Menu onClickHandler={this.props.onMenuClick} />
+							<Menu 
+								onClickHandler={this.props.onMenuClick} 
+								activeMenu={this.props.activeMenu}
+							/>
 						</div>
 					</div>
 				</div>

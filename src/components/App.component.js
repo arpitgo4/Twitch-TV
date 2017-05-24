@@ -19,18 +19,21 @@ export default class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			channels: []
+			channels: [],
+			activeMenu: 'all'
 		};
 	}
 
 	render() {
-		console.log('channels state', this.state.channels);
 		return (
 			<div className="container-fluid">
 				<div className="center-block">
 					<div className="row">
 						<div className="col-xs-6 col-xs-offset-3">
-							<Header onMenuClick={this._menuClickHandler.bind(this)}/>
+							<Header 
+								onMenuClick={this._menuClickHandler.bind(this)}
+								activeMenu={this.state.activeMenu}
+							/>
 						</div>
 					</div>	
 					<div className="row">
@@ -49,7 +52,7 @@ export default class App extends React.Component {
 	}
 
 	_menuClickHandler(slideTitle) {
-		console.log('slide title', slideTitle);
+		this.setState({ ...this.state, activeMenu: slideTitle });
 	}
 
 	componentDidMount() {
@@ -83,9 +86,3 @@ export default class App extends React.Component {
 	}
 
 }
-
-/*const channels = [
-	{ id: 1, logo: 'https://avatars2.githubusercontent.com/u/9892522?v=3&s=400', name: 'FreeCodeCamp', status: 'Offline'},
-	{ id: 2, logo: 'https://avatars2.githubusercontent.com/u/9892522?v=3&s=400', name: 'Test_channel', status: 'Offline'},
-	{ id: 3, logo: 'https://avatars2.githubusercontent.com/u/9892522?v=3&s=400', name: 'ESL_SC2', status: 'Offline'},
-];*/

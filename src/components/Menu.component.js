@@ -7,17 +7,26 @@ export default class Menu extends React.Component {
 			<div className="menu">
 				<div className="row">
 					<div className="col-xs-12">
-						<Slide title="all" onClick={this.props.onClickHandler} />
+						<Slide title="all" 
+							onClick={this.props.onClickHandler}
+							activeMenu={this.props.activeMenu}
+						/>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col-xs-12">
-						<Slide title="online" onClick={this.props.onClickHandler} />
+						<Slide title="online" 
+							onClick={this.props.onClickHandler} 
+							activeMenu={this.props.activeMenu}
+						/>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col-xs-12">
-						<Slide title="offline" onClick={this.props.onClickHandler} />
+						<Slide title="offline" 
+							onClick={this.props.onClickHandler} 
+							activeMenu={this.props.activeMenu}
+						/>
 					</div>
 				</div>
 			</div>
@@ -26,8 +35,9 @@ export default class Menu extends React.Component {
 
 }
 
-const Slide = ({ title, onClick }) => (
-	<div className="slide" onClick={() => onClick(title)}>
+const Slide = ({ title, onClick, activeMenu }) => (
+	<div className={`slide ${ activeMenu === title ? 'active' : '' }`} 
+			onClick={() => onClick(title)}>
 		<div className="row">
 			<div className="col-xs-1 col-xs-offset-0">
 				<div className={`slide-icon ${title}`} />

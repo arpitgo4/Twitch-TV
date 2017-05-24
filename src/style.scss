@@ -107,6 +107,7 @@ html, body, #react-app {
 
 		&.active {
 			transform: translateX(5%);
+			color: $slider-text-color;
 		}
 	}
 }
@@ -132,8 +133,7 @@ html, body, #react-app {
 
 	.channel-img {
 		border: 2px solid $tv-icon-border-color;
-		width: 100px;
-		
+		width: 40px;
 	}
 
 	.channel-name {
