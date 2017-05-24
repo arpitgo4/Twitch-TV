@@ -8,7 +8,9 @@ export default class Header extends React.Component {
 		return (
 			<div className="heading">
 				<p className="heading-text">Twitch Streamers</p>
-				<Menu />
+				<div className="pull-right">
+					<Menu />
+				</div>
 			</div>
 		);
 	}

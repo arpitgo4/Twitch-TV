@@ -38,6 +38,36 @@ html, body, #react-app {
 	margin-top: 2%;
 }
 
+.menu {
+
+	.slide {
+		color: $slider-text-color;
+		background-color: $body-background-color;
+
+		.slide-icon {
+			border: 1px solid $app-background-color;
+			border-radius: 50%;
+
+			&.all {
+				background-color: $$all-slider-icon-color;
+			}
+
+			&.online {
+				background-color: $online-slider-icon-color;
+			}
+
+			&.offline {
+				background-color: $offline-slider-icon-color;
+			}
+		} 
+
+		.slide-text {
+			text-transform: uppercase;
+			color: $app-background-color;
+		}
+	}
+}
+
 .channel-row {
 
 	$top-bottom-margin: 2px;
