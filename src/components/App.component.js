@@ -38,7 +38,16 @@ export default class App extends React.Component {
 					</div>	
 					<div className="row">
 						<div className="col-xs-6 col-xs-offset-3">
-							<ChannelList channelList={this.state.channels} />
+							<ChannelList channelList={
+								this.state.channels
+									.filter(channel => {
+										if(this.state.activeMenu === 'all')
+											return true;
+										else if(this.state.activeMenu === 'offline')
+											return channel.status === 'Offline';
+										else return channel.status !== 'Offline';
+									})
+							} />
 						</div>
 					</div>
 					<div className="row">
