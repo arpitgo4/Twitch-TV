@@ -29,10 +29,10 @@ export default class Menu extends React.Component {
 const Slide = ({ title }) => (
 	<div className="slide">
 		<div className="row">
-			<div className="col-xs-3 col-xs-offset-1">
+			<div className="col-xs-1 col-xs-offset-0">
 				<div className={`slide-icon ${title}`} />
 			</div>
-			<div className="col-xs-7 col-xs-offset-1">
+			<div className="col-xs-8 col-xs-offset-0">
 				<div className="slide-text">
 					<p>{title}</p>
 				</div>
