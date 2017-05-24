@@ -82,7 +82,7 @@ export default class App extends React.Component {
 
 					const c = {
 						id: res.body._id,
-						logo: res.body.logo,
+						logo: res.body.logo || 'https://dummyimage.com/50x50/ecf0e7/5c5457.jpg&text=0x3F',
 						name: res.body.display_name,
 						url: res.body.url,
 						status: (status === null || status === undefined) ? 'Offline' : `${status.game}:${status.channel.status}`
