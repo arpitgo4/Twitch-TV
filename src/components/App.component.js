@@ -71,9 +71,9 @@ export default class App extends React.Component {
 					const c = {
 						id: res.body._id,
 						logo: res.body.logo,
-						name: res.body.name,
+						name: res.body.display_name,
 						url: res.body.url,
-						status: (status === null || status === undefined) ? 'Offline' : 'Online'
+						status: (status === null || status === undefined) ? 'Offline' : `${status.game}:${status.channel.status}`
 					};
 					//console.log(c);
 					this.setState({ ...this.state, channels: [ ...this.state.channels, c ] });

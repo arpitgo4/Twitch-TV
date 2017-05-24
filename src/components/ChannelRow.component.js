@@ -13,7 +13,7 @@ export default class ChannelRow extends React.Component {
 					<div className="col-xs-3 col-xs-offset-0">
 						<p className="channel-name" onClick={((url) => () => this._openUrl(url))(this.props.url)}>{this.props.name}</p>
 					</div>
-					<div className="col-xs-7 col-xs-offset-0">
+					<div className="col-xs-6 col-xs-offset-0">
 						<p className="channel-status">{this.props.status}</p>
 					</div>
 				</div>
