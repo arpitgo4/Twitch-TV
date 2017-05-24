@@ -14,15 +14,20 @@ $tv-channel-seperator-color: $tv-icon-border-color;
 $tv-channel-text-color: #AECCA6;
 $tv-channel-status-text-color: #8AA6C2;
 
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700|Droid+Serif:400,400italic);
+
 html, body, #react-app {
 	height: 100%;
 	background-color: $body-background-color;
+	font-family: 'Droid Serif', serif;
+  	font-size: 14px;
 }
 
 .heading {
 	background-color: $app-background-color;
 	color: $header-text-color;
 	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
 	font-weight: 700;
 	font-size: 3em;
 	margin-top: 1%;
