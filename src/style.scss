@@ -87,10 +87,13 @@ html, body, #react-app {
 		}
 
 		&:hover {
+			cursor: pointer;
+		}
+
+		&:not(.active):hover {
 			$sliding-animation-time: .5s;
 			$color-transition-time: .1s;
 
-			cursor: pointer;
 			color: $slider-text-color;
 			animation: sliding $sliding-animation-time linear forwards;
 			transition: color $color-transition-time ease-in $sliding-animation-time;

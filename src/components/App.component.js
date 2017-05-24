@@ -41,11 +41,11 @@ export default class App extends React.Component {
 							<ChannelList channelList={
 								this.state.channels
 									.filter(channel => {
-										if(this.state.activeMenu === 'all')
-											return true;
-										else if(this.state.activeMenu === 'offline')
-											return channel.status === 'Offline';
-										else return channel.status !== 'Offline';
+										switch(this.state.activeMenu) {
+											case 'all': return true; break;
+											case 'offline': return channel.status === 'Offline'; break;
+											default: return channel.status !== 'Offline';
+										}
 									})
 							} />
 						</div>
@@ -87,11 +87,10 @@ export default class App extends React.Component {
 						url: res.body.url,
 						status: (status === null || status === undefined) ? 'Offline' : `${status.game}:${status.channel.status}`
 					};
-					//console.log(c);
+					
 					this.setState({ ...this.state, channels: [ ...this.state.channels, c ] });
 				})
 			});	
 		});
 	}
-
 }
