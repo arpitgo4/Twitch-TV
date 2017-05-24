@@ -1,15 +1,25 @@
 import React from 'react';
 
+import superagent from 'superagent';
+import jsonp from 'superagent-jsonp';
+
 import Header from './Header.component';
 import Footer from './Footer.component';
 import ChannelList from './ChannelList.component';
 
 export default class App extends React.Component {
 
+	TWITCH_API_CHANNEL = 'https://wind-bow.gomix.me/twitch-api/channels/';
+	TWITCH_API_STREAM = 'https://wind-bow.gomix.me/twitch-api/streams/';
+
+	CHANNELS = [
+		"freecodecamp","test_channel","ESL_SC2"
+	];
+
 	constructor() {
 		super();
 		this.state = {
-			channels
+			channels: []
 		};
 	}
 
@@ -39,6 +49,41 @@ export default class App extends React.Component {
 
 	_menuClickHandler(slideTitle) {
 		console.log('slide title', slideTitle);
+	}
+
+	componentDidMount() {
+		this.CHANNELS.forEach(channel => {
+			superagent
+			.get(`${this.TWITCH_API_STREAM}/${channel}`)
+			.use(jsonp)
+			.end((err, res) => {
+				if(err) {
+					//console.log('error in streams', err);
+					return;
+				}
+				const status = res.body.stream;
+				//console.log(channel, status);
+
+				superagent
+				.get(`${this.TWITCH_API_CHANNEL}/${channel}`)
+				.use(jsonp)
+				.end((err, res) => {
+					if(err) {
+					//	console.log('error in channels', err);
+						return;
+					}
+					//console.log(res.body);
+					const c = {
+						id: res.body._id,
+						logo: res.body.logo,
+						name: res.body.name,
+						status: (status === null || status === undefined) ? 'Offline' : 'Online'
+					};
+					console.log(c);
+					//this.setState({ ...this.state, channels: this.state.channels.push(c) });
+				})
+			});	
+		});
 	}
 
 }

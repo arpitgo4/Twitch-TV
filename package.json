@@ -52,6 +52,7 @@
     "serve-favicon": "~2.3.2",
     "style-loader": "^0.13.2",
     "superagent": "^3.5.0",
+    "superagent-jsonp": "^0.1.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1"
   },
