@@ -40,7 +40,7 @@ export default class App extends React.Component {
 }
 
 const channels = [
-	{ id: 1, logo: null, name: 'FreeCodeCamp', status: 'Offline'},
-	{ id: 2, logo: null, name: 'Test_channel', status: 'Offline'},
-	{ id: 3, logo: null, name: 'ESL_SC2', status: 'Offline'},
+	{ id: 1, logo: 'https://avatars2.githubusercontent.com/u/9892522?v=3&s=400', name: 'FreeCodeCamp', status: 'Offline'},
+	{ id: 2, logo: 'https://avatars2.githubusercontent.com/u/9892522?v=3&s=400', name: 'Test_channel', status: 'Offline'},
+	{ id: 3, logo: 'https://avatars2.githubusercontent.com/u/9892522?v=3&s=400', name: 'ESL_SC2', status: 'Offline'},
 ];

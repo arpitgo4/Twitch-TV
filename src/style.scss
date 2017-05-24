@@ -39,9 +39,14 @@ html, body, #react-app {
 
 	background-color: $row-background-color;
 	color: $tv-channel-text-color;
+	min-height: 60px;
 	
 	&:first-child {
 		margin-top: -8px;
+	}
+
+	& > .row {
+		padding-top: 2.5%;
 	}
 
 	margin-top: $top-bottom-margin;
@@ -49,6 +54,7 @@ html, body, #react-app {
 
 	.channel-img {
 		border: 2px solid $tv-icon-border-color;
+		width: 100%;
 	}
 
 	.channel-name {
