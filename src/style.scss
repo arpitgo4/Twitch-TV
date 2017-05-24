@@ -48,14 +48,12 @@ html, body, #react-app {
 	margin-top: 13px;
 	margin-bottom: 15px;
 
-	&:hover {
-		cursor: pointer;
-	}
-
 	.slide {
-		color: $slider-text-color;
+		color: $body-background-color;
 		background-color: $body-background-color;
-		
+		transform: translateX(75%);
+
+
 		& > .row {
 			max-height: 20px;
 		}
@@ -83,10 +81,32 @@ html, body, #react-app {
 
 		.slide-text {
 			text-transform: uppercase;
-			color: $app-background-color;
 			text-align: right;
 			margin-bottom: -4px;
 			margin-top: 1px;
+		}
+
+		&:hover {
+			$sliding-animation-time: .5s;
+			$color-transition-time: .1s;
+
+			cursor: pointer;
+			color: $slider-text-color;
+			animation: sliding $sliding-animation-time linear forwards;
+			transition: color $color-transition-time ease-in $sliding-animation-time;
+
+			@keyframes sliding {
+				from {
+					transform: translateX(75%);
+				}
+				to {
+					transform: translateX(5%);
+				}
+			}
+		}
+
+		&.active {
+			transform: translateX(0%);
 		}
 	}
 }
