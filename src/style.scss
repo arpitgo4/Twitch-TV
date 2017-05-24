@@ -33,14 +33,13 @@ html, body, #react-app {
 	margin-top: 1%;
 
 	.heading-text {
-		margin-left: 5%;
+		margin-left: 15%;
 		margin-top: 2%;
 	}
 
 	.heading-menu {
 		font-size: .29em;
 		display: inline;
-		background-color: red;
 	}
 }
 
@@ -49,6 +48,8 @@ html, body, #react-app {
 	.slide {
 		color: $slider-text-color;
 		background-color: $body-background-color;
+		margin-top: 2%;
+		margin-bottom: 2%;
 
 		.slide-icon {
 			border: 1px solid $app-background-color;
