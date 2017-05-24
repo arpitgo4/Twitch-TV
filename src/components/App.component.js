@@ -19,7 +19,7 @@ export default class App extends React.Component {
 				<div className="center-block">
 					<div className="row">
 						<div className="col-xs-6 col-xs-offset-3">
-							<Header />
+							<Header onMenuClick={this.menuClickHandler.bind(this)}/>
 						</div>
 					</div>	
 					<div className="row">
@@ -35,6 +35,10 @@ export default class App extends React.Component {
 				</div>
 			</div>
 		);
+	}
+
+	menuClickHandler(slideTitle) {
+		console.log('slide title', slideTitle);
 	}
 
 }
